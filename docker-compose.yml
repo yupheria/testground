@@ -9,7 +9,7 @@ web:
     - php
 
 php:
-    image: php:7-fpm
+    build: ./app_settings
     volumes:
         - ./app_code:/code
 
