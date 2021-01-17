@@ -14,6 +14,8 @@ php:
     restart: always
     volumes:
         - ./app_code:/code
+    command: >
+        bash -c "composer install -d /code/sampleSymphony"
 
 mysql:
   image: mysql:latest
