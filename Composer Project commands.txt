@@ -1,0 +1,11 @@
+# Sympony Install 
+
+https://localhost:9090/sampleSymphony/public/
+
+composer create-project symfony/website-skeleton sampleSymphony
+
+# SilverStripe Install
+
+composer create-project silverstripe/installer sampleSilver --ignore-platform-reqs
+
+http://localhost:9090/sampleSilver/public/
