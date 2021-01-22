@@ -13,4 +13,4 @@ http://localhost:9090/sampleSilver/public/
 # PHPunit test runs
 
 cd app_code/tests
-./vendor/bin/phpunit sampleTest/
+./vendor/bin/phpunit --testdox sampleTest/
