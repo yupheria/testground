@@ -9,3 +9,8 @@ composer create-project symfony/website-skeleton sampleSymphony
 composer create-project silverstripe/installer sampleSilver --ignore-platform-reqs
 
 http://localhost:9090/sampleSilver/public/
+
+# PHPunit test runs
+
+cd app_code/tests
+./vendor/bin/phpunit sampleTest/

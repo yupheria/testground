@@ -35,5 +35,7 @@ jobs:
           php -r "unlink('composer-setup.php');"
           sudo mv composer.phar /usr/local/bin/composer
           composer install -d ./app_code/tests
+          cd app_code/tests
+          ./vendor/bin/phpunit sampleTest/
 
 
