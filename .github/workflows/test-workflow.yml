@@ -28,5 +28,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Install PHP
         run: |
+          sudo apt update
           sudo apt install php-fpm
           php -v
