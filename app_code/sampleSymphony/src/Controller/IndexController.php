@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Tester;
 use App\Service\MySampleService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,13 +20,14 @@ class IndexController extends AbstractController
 
         $myID = $mySampleService->getMyService();
 
+        $rows = $this->getDoctrine()
+            ->getRepository(Tester::class)
+            ->findAll();
+
         $params = [
             "headerText" => "Hi There",
             "myID" => $myID,
-            "mahList" => [
-                ["index" => 1, "text" => "sampleText"],
-                ["index" => 2, "text" => "notherText"]
-            ]
+            "mahList" => $rows
         ];
         return $this->render("index.html.twig", $params);
     }
