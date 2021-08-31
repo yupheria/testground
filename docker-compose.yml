@@ -2,7 +2,7 @@ web:
   image: nginx:latest
   restart: always
   ports:
-    - "9090:80"
+    - "9999:80"
   volumes:
     - ./app_code:/code
     - ./app_settings/nginx-site.conf:/etc/nginx/conf.d/default.conf
@@ -21,7 +21,7 @@ mysql:
   image: mysql:latest
   restart: always
   ports:
-    - "9091:3306"
+    - "9998:3306"
   environment: 
     - MYSQL_ROOT_PASSWORD=password
 
@@ -29,7 +29,7 @@ phpmyadmin:
   image: phpmyadmin/phpmyadmin
   restart: always
   ports:
-    - "9092:80"
+    - "9997:80"
   environment:
     - PMA_HOST=mysql
   links: 

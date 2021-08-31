@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <div>
+            <p>{{ headerText }}</p>
+            <div>
+                {% for item in mahList %}
+                    <p>{{ item.index }}</p> <p>{{ item.text }}</p>
+                {% endfor %}
+            </div>
+            <div>
+                {{ myID }}
+            </div>
+        </div>
+    </body>
+</html>

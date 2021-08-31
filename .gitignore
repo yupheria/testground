@@ -1,2 +1,4 @@
 /app_code/tests/vendor
 /app_code/tests/composer.lock
+/.idea
+app_code/sampleSymphony/composer.lock
