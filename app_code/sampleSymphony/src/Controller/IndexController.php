@@ -41,4 +41,11 @@ class IndexController extends AbstractController
         ];
         return $this->render("index.html.twig", $params);
     }
+
+    /**
+     * @Route("/testpage")
+     */
+    public function testpage() {
+        return $this->render("base.html.twig");
+    }
 }
