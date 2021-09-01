@@ -19,6 +19,28 @@ class TesterRepository extends ServiceEntityRepository
         parent::__construct($registry, Tester::class);
     }
 
+    public function fetchRowByID(int $id): ?array {
+        return $this->createQueryBuilder("tst")
+            ->andWhere("tst.id = :myID")
+            ->setParameter("myID", $id)
+            ->orderBy("tst.id", "DESC")
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function customQuery(int $id): ?array {
+        $entityManager = $this->getEntityManager();
+
+        return $entityManager->createQuery(
+            "SELECT tst FROM App\Entity\Tester tst 
+            WHERE tst.id = :myID 
+            ORDER BY tst.id DESC"
+        )
+            ->setParameter("myID", $id)
+            ->execute();
+    }
+
     // /**
     //  * @return Tester[] Returns an array of Tester objects
     //  */

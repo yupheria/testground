@@ -10,6 +10,16 @@
             <div>
                 {{ myID }}
             </div>
+            <div>
+                {% for row in customResult %}
+                    <p>{{ row.id }}</p> <p>{{ row.name }}</p> <p>{{ row.price }}</p>
+                {% endfor %}
+            </div>
+            <div>
+                {% for row in fromCustom %}
+                    <p>{{ row.id }}</p> <p>{{ row.name }}</p> <p>{{ row.price }}</p>
+                {% endfor %}
+            </div>
         </div>
     </body>
 </html>

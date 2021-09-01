@@ -24,10 +24,20 @@ class IndexController extends AbstractController
             ->getRepository(Tester::class)
             ->findAll();
 
+        $customResult = $this->getDoctrine()
+            ->getRepository(Tester::class)
+            ->fetchRowByID(2);
+
+        $fromCustomQuery = $this->getDoctrine()
+            ->getRepository(Tester::class)
+            ->customQuery(3);
+
         $params = [
             "headerText" => "Hi There",
             "myID" => $myID,
-            "mahList" => $rows
+            "mahList" => $rows,
+            "customResult" => $customResult,
+            "fromCustom" => $fromCustomQuery
         ];
         return $this->render("index.html.twig", $params);
     }
